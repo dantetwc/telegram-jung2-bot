@@ -29,7 +29,7 @@ export default class BotHandler {
       const message = await messageController.getAllJung(msg)
       if (!_.isEmpty(message)) { this.bot.sendMessage(msg.chat.id, message) }
     } catch (e) {
-      log.e(`/alljung err: ${e.message}`, process.env.DISABLE_LOGGING)
+      log.e(`/all19s err: ${e.message}`, process.env.DISABLE_LOGGING)
       this.bot.sendMessage(msg.chat.id, 'Server Error')
     }
   }
@@ -45,6 +45,30 @@ export default class BotHandler {
       log.i('add message success', process.env.DISABLE_LOGGING)
     } else {
       log.e('skip repeated message', process.env.DISABLE_LOGGING)
+    }
+
+    if (msg.text.match(/1c7 is fucking gay/g)) {
+      this.bot.sendMessage(msg.chat.id, '不能同意更多', {reply_to_message_id: msg.message_id})
+    }
+
+    if (msg.text.match(/VAG垃圾車/g)) {
+      this.bot.sendMessage(msg.chat.id, '你講得好岩!', {reply_to_message_id: msg.message_id})
+    }
+
+    if (msg.text.match(/i am gay/g)) {
+      this.bot.sendMessage(msg.chat.id, '!', {reply_to_message_id: msg.message_id})
+    }
+
+    if (msg.text.match(/呢個世界邊個最gay/g)) {
+      this.bot.sendMessage(msg.chat.id, '@burnme', {reply_to_message_id: msg.message_id})
+    }
+
+    if (msg.text.match(/呢個世界邊個最變態/g)) {
+      this.bot.sendMessage(msg.chat.id, '@310014780', {reply_to_message_id: msg.message_id})
+    }
+
+    if (msg.text.match(/呢個世界最垃圾既係咩車/g)) {
+      this.bot.sendMessage(msg.chat.id, 'Audi S4 B8', {reply_to_message_id: msg.message_id})
     }
   }
 

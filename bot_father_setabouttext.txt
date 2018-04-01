@@ -1,4 +1,4 @@
-冗員[jung2jyun4]
+濕鳩bot
 
 This bot will count the no. of msg in the group.
 

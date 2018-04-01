@@ -133,6 +133,7 @@ export default class MessageController {
     messageObject.username = msg.from.username || ''
     messageObject.firstName = msg.from.first_name || ''
     messageObject.lastName = msg.from.last_name || ''
+    messageObject.text = msg.text || ''
     return messageObject.save()
   }
 
