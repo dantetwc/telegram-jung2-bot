@@ -64,7 +64,7 @@ export default class BotHandler {
 
     console.log(msg)
 
-    if(_.isNil(msg)) {
+    if(_.isNil(msg.text)) {
       return
     }
 
