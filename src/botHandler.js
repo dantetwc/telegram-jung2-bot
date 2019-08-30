@@ -94,7 +94,7 @@ export default class BotHandler {
 
     if(msg.from.id == '199645272') {
       let index = Math.floor(Math.random() * Math.floor(on9West.length - 1))
-      this.bot.sendMessage(msg.chat.id, on9West, {reply_to_message_id: msg.message_id})
+      this.bot.sendMessage(msg.chat.id, on9West[index], {reply_to_message_id: msg.message_id})
     }
   }
 
