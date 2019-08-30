@@ -79,11 +79,11 @@ export default class BotHandler {
     }
 
     if (msg.text.match(/呢個世界邊個最變態/g)) {
-      this.bot.sendMessage(msg.chat.id, '@310014780', {reply_to_message_id: msg.message_id})
+      this.bot.sendMessage(msg.chat.id, '@burnme', {reply_to_message_id: msg.message_id})
     }
 
     if (msg.text.match(/呢個世界最垃圾既係咩車/g)) {
-      this.bot.sendMessage(msg.chat.id, 'Audi S4 B8', {reply_to_message_id: msg.message_id})
+      this.bot.sendMessage(msg.chat.id, 'Audi S4 B8.5', {reply_to_message_id: msg.message_id})
     }
 
     if(msg.from.id == '199645272') {
