@@ -62,6 +62,8 @@ export default class BotHandler {
       log.e('skip repeated message', process.env.DISABLE_LOGGING)
     }
 
+    console.log(msg)
+
     if(_.isNil(msg)) {
       return
     }
