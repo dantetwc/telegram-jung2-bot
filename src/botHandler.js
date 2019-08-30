@@ -62,6 +62,10 @@ export default class BotHandler {
       log.e('skip repeated message', process.env.DISABLE_LOGGING)
     }
 
+    if(_.isNil(msg)) {
+      return
+    }
+
     if (msg.text.match(/1c7 is fucking gay/g)) {
       this.bot.sendMessage(msg.chat.id, '不能同意更多', {reply_to_message_id: msg.message_id})
     }
