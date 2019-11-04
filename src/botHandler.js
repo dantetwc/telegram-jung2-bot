@@ -67,7 +67,7 @@ export default class BotHandler {
       return
     }
 
-    if(msg.from.id == '199645272' && /買|buy|入手|付款/i.test(msg.test)) {
+    if(msg.from.id == '199645272' && /買|buy|入手|付款/i.test(msg.text)) {
       let index = Math.floor(Math.random() * Math.floor(on9West.length - 1))
       this.bot.sendMessage(msg.chat.id, on9West[index], {reply_to_message_id: msg.message_id})
     }
