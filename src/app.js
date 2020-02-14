@@ -24,6 +24,7 @@ bot.onText(/\/top(t|T)en/, msg => botHandler.onTopTen(msg))
 bot.onText(/\/all19s/, msg => botHandler.onAllJung(msg))
 bot.onText(/\/19(h|H)elp/, msg => botHandler.onHelp(msg))
 bot.onText(/\/19debug/, msg => botHandler.onDebug(msg))
+bot.onText(/\/ban_alexis/, msg => botHandler.onBanAlexis(msg))
 bot.on('message', msg => botHandler.onMessage(msg))
 bot.on('polling_error', error => log.e(`polling_error: ${JSON.stringify(error)}`))
 

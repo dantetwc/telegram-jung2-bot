@@ -27,6 +27,12 @@ const on9West = [
 export default class BotHandler {
   constructor (bot) {
     this.bot = bot
+    this.ban_toe_count = 0
+  }
+
+  async onBanAlexis (msg) {
+    this.ban_toe_count++
+    this.bot.sendMessage(msg.chat.id, `而家有${this.ban_toe_count}想ban腳趾`, {reply_to_message_id: msg.message_id})
   }
 
   async onTopTen (msg) {
