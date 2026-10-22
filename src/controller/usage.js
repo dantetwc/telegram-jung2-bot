@@ -69,8 +69,8 @@ export default class UsageController {
         .limit(c.CONFIG.CLEANUP_NUMBER_TO_DELETE)
         .exec()
       const ids = docs.map(doc => doc._id)
-      const result = await this.UsageCache.remove({_id: {$in: ids}})
-      const numberDeleted = result.result.n
+      const result = await this.UsageCache.deleteMany({_id: {$in: ids}})
+      const numberDeleted = result.deletedCount
       log.i(`cleanup usage cache database, numberDeleted: ${numberDeleted}`)
       shouldRepeat = (numberDeleted === c.CONFIG.CLEANUP_NUMBER_TO_DELETE)
     }

@@ -18,7 +18,7 @@ gulp.task('stress', () => gulp.src('./test/stress/testStress.js', {read: false})
   .pipe(mocha({
     reporter: 'spec',
     timeout: 60000,
-    compilers: 'js:babel-core/register'
+    compilers: 'js:@babel/register'
   }))
   .on('error', (e) => {
     console.log(e.message)

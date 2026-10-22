@@ -25,7 +25,7 @@ export default class MessageController {
   async getCount (msg) {
     const chatId = msg.chat.id.toString()
     return this.MessageDOCache
-      .count({
+      .countDocuments({
         chatId: chatId.toString(),
         dateCreated: {$gte: new Date(moment().subtract(7, 'day').toISOString())}
       }).exec()
@@ -180,8 +180,8 @@ export default class MessageController {
         .limit(c.CONFIG.CLEANUP_NUMBER_TO_DELETE)
         .exec()
       const ids = docs.map(doc => doc._id)
-      const result = await this.MessageDOCache.remove({_id: {$in: ids}})
-      const numberDeleted = result.result.n
+      const result = await this.MessageDOCache.deleteMany({_id: {$in: ids}})
+      const numberDeleted = result.deletedCount
       log.i(`numberDeleted: ${numberDeleted}`)
       shouldRepeat = (numberDeleted === c.CONFIG.CLEANUP_NUMBER_TO_DELETE)
     }
